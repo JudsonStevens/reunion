@@ -22,10 +22,10 @@ class Activity
   end
 
   def calculate_shares(fair_share)
+    owed_hash = {}
     @participants.keys.map do |name|
-        "#{name} owes #{fair_share - @participants[name]}."
+        owed_hash[name] = (fair_share - @participants[name])
     end
+    owed_hash
   end
-
-
 end
