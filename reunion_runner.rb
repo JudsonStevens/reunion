@@ -22,7 +22,18 @@ reunion.add_activity(rowing)
 x = reunion.create_cost_breakdown
 puts x
 
-simple_template = "The cost breakdown for the reunion is <%= reunion.create_cost_breakdown %>."
+template = File.read("html_template.erb")
 
-renderer = ERB.new(simple_template)
-puts output = renderer.result()
+# class ReunionMessage
+#   attr_accessor :breakdown
+#
+#   def create_breakdown
+
+@breakdown = reunion.create_cost_breakdown
+renderer = ERB.new(template)
+result = renderer.result()
+
+
+File.open("result.html", "w") do |f|
+  f.write(result)
+end

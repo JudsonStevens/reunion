@@ -1,0 +1,10 @@
+<html>
+  <head>
+      <title>Family Reunion</title>
+  </head>
+  <body>
+    The breakdown costs for the renuion are <% @breakdown.each do |name, owed| %>
+      <%= "#{name} is owed #{owed}." %>
+      <% end %>
+  </body>
+</html>
