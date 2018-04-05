@@ -49,7 +49,7 @@ class ReunionTest < Minitest::Test
     @r.add_activity(climbing)
     @r.add_activity(hiking)
 
-    expected = ["Sally owes 4.", "Bob owes -6."]
+    expected = {"Sally" => 5, "Bob" => -5}
     actual = @r.create_cost_breakdown
 
     assert_equal expected, actual
