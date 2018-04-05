@@ -23,13 +23,7 @@ class Activity
 
   def calculate_shares(fair_share)
     @participants.keys.map do |name|
-      if @participants[name] < fair_share
         "#{name} owes #{fair_share - @participants[name]}."
-      elsif @participants[name] > fair_share
-        "#{name} owes #{fair_share - @participants[name]}."
-      else
-        "#{name} is neither owed money nor owes money."
-      end
     end
   end
 
