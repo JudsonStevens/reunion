@@ -35,7 +35,17 @@ class ActivityTest < Minitest::Test
     actual = @a.evaluate_cost
 
     assert_equal expected, actual
-    
   end
+
+  def test_it_can_split_cost
+    @a.add_participant("Sally", 15)
+    @a.add_participant("Bob", 20)
+    expected = ["Sally owes 2.", "Bob owes -3."]
+    actual = @a.split_cost
+
+    assert_equal expected, actual
+  end
+
+
 
 end
