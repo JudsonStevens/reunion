@@ -1,9 +1,7 @@
 require './lib/activity'
 class Reunion
   attr_reader :activities,
-              :total_cost,
-              :names
-
+              :total_cost
   def initialize(location)
     @activities = []
     @location = location
